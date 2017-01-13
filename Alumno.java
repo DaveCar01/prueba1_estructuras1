@@ -4,21 +4,30 @@ import javax.swing.JOptionPane;
 
 public class Alumno extends Persona
 {
-	private String nombreAlumnos;
-	private String materia;
 	
+	private int codigo;
+
+	public Alumno(int cod,String nombre) {
+		super(nombre);
+		this.codigo = cod;
+	}
+
 	public Alumno() {
 		super();
-		nombreAlumnos= JOptionPane.showInputDialog("ingrese el nombre del alumno;");
-		materia=JOptionPane.showInputDialog("ingrese la materia del Alumno");
-		
-		// TODO Auto-generated constructor stub
 	}
-	public Alumno(String nombre, long cedula) {
-		super(nombre, cedula);
-		// TODO Auto-generated constructor stub
+
+	public int getCod() {
+		return codigo;
 	}
+
+	public void setCod(int cod) {
+		this.codigo = cod;
+	}
+
 	
-	
+	@Override
+	public String toString() {
+		return ""+ super.toString()+"- codigo de alumno=" + codigo + "\n";
+	}
 
 }

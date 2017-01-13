@@ -4,27 +4,19 @@ import java.util.StringTokenizer;
 
 import javax.swing.JOptionPane;
 
-public class Persona
+public abstract class Persona
 {
-	private String nombre;
-	private long cedula;
 	
-	public Persona() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	private String nombre;
 
-	public Persona(String nombre, long cedula) {
+	
+	public Persona(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.cedula = cedula;
 	}
-	public void setpersona(){
-		String linea= JOptionPane.showInputDialog("Ingrese el nombre y la cedula separado por una coma");
-		StringTokenizer tokens = new StringTokenizer(linea, ",");
-		this.nombre= tokens.nextToken();
-		this.cedula=Long.parseLong(tokens.nextToken());
-		
+
+	public Persona() {
+		super();
 	}
 
 	public String getNombre() {
@@ -35,26 +27,13 @@ public class Persona
 		this.nombre = nombre;
 	}
 
-	public long getCedula() {
-		return cedula;
-	}
-
-	public void setCedula(long cedula) {
-		this.cedula = cedula;
-	}
 	
 	
-	public void setPersona(){
-		String linea= JOptionPane.showInputDialog("Ingrese el nombre y la cedula separado por una coma");
-		StringTokenizer tokens = new StringTokenizer(linea, ",");
-		this.nombre= tokens.nextToken();
-		this.cedula=Long.parseLong(tokens.nextToken());
-		
-	}
-
+	
+	
 	@Override
 	public String toString() {
-		return "persona [nombre=" + nombre + ", cedula=" + cedula + "]";
+		return " " + nombre + " ";
 	}
 	
 	

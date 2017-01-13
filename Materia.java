@@ -1,100 +1,68 @@
 package strc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 public class Materia 
 {
-	/*ArrayList<Profesor> profesores= new ArrayList<Profesor>();
-	ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
-	
-	public Materia() {
+	private String materia;
+	private Profesor[] profesor;
+	private Alumno[] alumnos;
+	public Materia(String mat, Profesor[] profesor, Alumno[] alumnos) {
 		super();
-		profesores= new ArrayList<Profesor>();
-		alumnos= new ArrayList<Alumno>();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Materia(ArrayList<Profesor> profesores, ArrayList<Alumno> alumnos) {
-		super();
-		this.profesores = profesores;
+		this.profesor = profesor;
 		this.alumnos = alumnos;
+		this.materia = mat;
 	}
-
-	public ArrayList<Profesor> getProfesores() {
-		return profesores;
+	public Profesor[] getProfesor() {
+		return profesor;
 	}
-
-	public void setProfesores(ArrayList<Profesor> profesores) {
-		this.profesores = profesores;
+	public void setProfesor(Profesor[] profesor) {
+		this.profesor = profesor;
 	}
-
-	public ArrayList<Alumno> getAlumnos() {
+	public Alumno[] getAlumnos() {
 		return alumnos;
 	}
-
-	public void setAlumnos(ArrayList<Alumno> alumnos) {
+	public void setAlumnos(Alumno[] alumnos) {
 		this.alumnos = alumnos;
 	}
-	
-	public void borrar()
-	{
-		Iterator iterador= profesores.iterator();
-		
-		while(iterador.hasNext())
-		{
-			
-			if(iterador.next() != null)
-				iterador.remove();
-		}
+	public String getMateria() {
+		return materia;
 	}
-	public void setDesplegarProfesor()
-		{
-			Iterator<Profesor> iterador= profesores.iterator();
-			Profesor aux;
-			
-			while(iterador.hasNext())
-			{
-				aux= iterador.next();
-				System.out.println(iterador.next().getNombreProfesor());
-				System.out.println(aux.getMateria());
-				
+	public void setMateria(String materia) {
+		this.materia = materia;
+	}
+	public String buscarProf(String nom_prof){
+		for(int i=0;i<profesor.length;i++){
+			if(profesor[i].getNombre().compareToIgnoreCase(nom_prof)==0){
+				return this.materia;
 			}
-		
-	}
-	
-	public void setDesplegarAlumno()
-	{
-		Iterator<Profesor> iterador= alumnos.iterator();
-		Alumno aux;
-		
-		while(iterador.hasNext())
-		{
-			aux= iterador.next();
-			System.out.println(iterador.next().getNombreProfesor());
-			System.out.println(aux.getMateria());
-			
 		}
-	}*/
-	public void QuimicaAlumno(){
-		String[] Alumnos={"Jorge", "Julio", "Simon"};
-		JOptionPane.showMessageDialog(null, Alumnos);
+		return "s";
 	}
 	
-	public void fisicaAlumno(){
-		String[] Alumnos={"david", "maria", "rosa"};
-		JOptionPane.showMessageDialog(null, Alumnos);
+	public String buscarAlumno(String nom_p){
+		for(int i=0;i<alumnos.length;i++){
+			if(alumnos[i].getNombre().compareToIgnoreCase(nom_p)==0){
+				return this.materia;
+			}
+		}
+		return "s";
 	}
-	public void calculoAlumno(){
-		String[] Alumnos={"Jose", "patricio", "ana"};
-		JOptionPane.showMessageDialog(null, Alumnos);
+	
+	@Override
+	public String toString() {
+		return "Materia: " + materia + ",\n Profesores: \n"
+				+ Arrays.toString(profesor) + ",\n Alumnos: \n"
+				+ Arrays.toString(alumnos) + "";
 	}
-	public void programacionAlumno(){
-		String[] Alumnos={"sergio", "andres", "karina"};
-		JOptionPane.showMessageDialog(null, Alumnos);
-	}
+	
 	
 	
 }
+	
+	
+
